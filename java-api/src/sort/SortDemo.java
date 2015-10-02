@@ -1,5 +1,6 @@
 package sort;
 
+import java.util.Arrays;
 import java.util.Vector;
 /**
  * @file_name : AscSort.java 
@@ -13,15 +14,7 @@ public class SortDemo {
 		Vector<Integer> vec = new Vector<Integer>();
 		int[] arr = {2, 5, 68, 79, 123, 4, 9};
 		int temp=0;
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[i]<arr[j]) {
-					temp = arr[i];   // 스왑정렬
-					arr[i] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
+		Arrays.sort(arr); // 오름차순 정렬 메소드
 		for (int i : arr) {
 			vec.add(i);
 		}

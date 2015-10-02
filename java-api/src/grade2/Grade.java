@@ -43,7 +43,7 @@ public class Grade {
 	}
 	@Override
 	public String toString() {
-		return "성적 [ 학번=" + hak + ", 이름=" + name +"종합점수=" + getTotal() + "]";
+		return "학적부 [ 학번=" + hak + ", 이름=" + name +"종합점수=" + getTotal() + "]";
 	}
 	
 }
