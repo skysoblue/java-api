@@ -15,7 +15,12 @@ public class MemberServiceImpl implements MemberService{
 		member.setAddr(addr);
 		map.put(id, member);
 	}
-
+	/**
+	 *  환영합니다. 서울에 사시는 30세 홍길동님.
+	 *  비번이 다릅니다. 다시 입력하세요
+	 *  입력하신 ID 는 존재하지 않거나, 일치하지 않습니다. 다시 입력해 주세요.
+	 *  Map 에서 밸류값만 가져오는 메소드는 map.get("키값")
+	 */
 	@Override
 	public String login(String id, String pass) {
 		
@@ -32,33 +37,59 @@ public class MemberServiceImpl implements MemberService{
 		}else{
 			result = "입력하신 ID 는 존재하지 않거나, 일치하지 않습니다. 다시 입력해 주세요.";
 		}
-		/**
-		 *  환영합니다. 서울에 사시는 30세 홍길동님.
-		 *  비번이 다릅니다. 다시 입력하세요
-		 *  입력하신 ID 는 존재하지 않거나, 일치하지 않습니다. 다시 입력해 주세요.
-		 *  Map 에서 밸류값만 가져오는 메소드는 map.get("키값")
-		 */
 		
-		if (true) {
-			
-		} else if(true) {
-
+		return result;
+	}
+	/**
+	 * 전체 회원수 
+	 */
+	@Override
+	public int count() {
+		return map.size();
+	}
+	/**
+	 * ID로 회원검색
+	 */
+	@Override
+	public Member searchById(String id) {
+		return (Member) map.get(id);
+	}
+	/**
+	 * 비번변경
+	 */
+	@Override
+	public String changePass(String id,String pass) {
+		String result ="";
+		Member taget = (Member) map.get(id);
+		if (taget != null) {
+			taget.setPass(pass);
+			result ="비밀번호가 변경되었습니다.";
 		}else{
-			
+			result = "비밀번호가 변경되지 않았습니다.";
 		}
 		return result;
 	}
-
+	/**
+	 * 회원탈퇴
+	 */
 	@Override
-	public int count() {
-		// TODO Auto-generated method stub
-		return 0;
+	public String remove(String id) {
+		String result =null;
+		Object m = map.remove(id); // 리턴값이 value
+		if (m != null) {
+			result = "입력하신 ID "+id+"가 삭제되었습니다.";
+		} else {
+			result = "삭제하려는 ID가 없습니다. 다시 입력하세요";
+		}
+		return result;
 	}
-
-	@Override
-	public Member searchById(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
+
+
+
+
+
+
+
+
+
