@@ -51,6 +51,48 @@ public class StringMethod {
 		System.out.println("[3] Hello Javan".replace("a", "")); // [3] Hello Jvn
 		System.out.println("[4] Hello Javan".replaceAll(".a", "")); // [4] Hello n
 		
+		System.out.println("Hello. Java".toUpperCase());
+		System.out.println("Hello. Java".toLowerCase());
+		System.out.println("Hello. Java".length()); // char 의 갯수반환, 공백도 갯수로 인정
+		System.out.println("Hello. Java    ".replaceAll(" ", "").length()); // 모든 공백 제거
+		System.out.println("Hello. Java    ".trim().length()); // 트림은 앞뒤 공백만 제거
+		
+		System.out.println(1);
+		System.out.println(String.valueOf("ab")); // "ab" 는 상수풀에 있는 주소값을 가지고 있다
+		// String.valueOf("ab") 의 결과값은 값 그대로인 ab 를 출력합니다.
+		
+		/**
+		 * Wrapper 클래스
+		 * 기본형타입 <- -> 객체형타입
+		 * byte <- -> Byte
+		 * short <- -> Short
+		 * int <- -> Integer
+		 * long <- -> Long
+		 * char <- -> String
+		 * boolean <- -> Boolean
+		 * float <- -> Float
+		 * double <- -> Double
+		 */
+		int a = Integer.parseInt("1");
+		int b = Integer.parseInt("2");
+		System.out.println(a+b);
+		String age = "a";
+		
+		if (Integer.parseInt(age) > 19) {
+			System.out.println("영화관람가능");
+		}else{
+			System.out.println("불가");
+		}
+		/**
+		 * 
+		 */
+		System.out.println(Byte.parseByte("1"));
+		System.out.println(Short.parseShort("1"));
+		System.out.println(Integer.parseInt("1"));
+		System.out.println(Long.parseLong("1000"));
+		System.out.println(Boolean.parseBoolean("true"));
+		System.out.println(Float.parseFloat("1.0"));
+		System.out.println(Double.parseDouble("3.14"));
 		
 	}
 }
