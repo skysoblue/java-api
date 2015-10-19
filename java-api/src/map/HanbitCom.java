@@ -18,7 +18,7 @@ public class HanbitCom {
 		 */
 		String id = "", pass ="";
 		Scanner scanner = new Scanner(System.in);
-		MemberService service = new MemberServiceImpl();
+		MemberService service = MemberServiceImpl.getInstance();
 		Member m = new Member();
 		while (true) {
 			System.out.println("1 : 회원가입  2: 로그인  3:총회원수 4:ID검색  5:비번수정  6:회원탈퇴  7:종료");
